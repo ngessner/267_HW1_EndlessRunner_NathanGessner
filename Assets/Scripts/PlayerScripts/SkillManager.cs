@@ -26,6 +26,10 @@ public class SkillManager : MonoBehaviour
         GameObject cooldownTextObj = GameObject.Find("CooldownText");
 
         cooldownGUI = cooldownTextObj.GetComponent<TextMeshProUGUI>();
+
+        // need to call this to fix bug involving skills lasting between runs
+        Time.timeScale = 1;
+        Time.fixedDeltaTime = 0.002f;
     }
 
     private void Update()

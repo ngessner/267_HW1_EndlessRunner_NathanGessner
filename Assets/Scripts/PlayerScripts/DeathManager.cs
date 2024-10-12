@@ -6,15 +6,11 @@ using UnityEngine.SceneManagement;
 public class DeathManager : MonoBehaviour
 {
     DetectHit hitObj;
-    PointHandler pointHandler;
-
-    // this class decides what to do with the player once the death condition is met.
-    // right now, I just reset the scene.
+    public GameOverHandler gameOverHandler; 
 
     void Start()
     {
         hitObj = GetComponent<DetectHit>();
-        pointHandler = GetComponent<PointHandler>();
     }
 
     void Update()
@@ -25,17 +21,10 @@ public class DeathManager : MonoBehaviour
     void deathTempDebug()
     {
         if (hitObj.playerDeath)
-        {
-            // function for debugging, because we don't have all the logic here yet
+        {       
             Debug.Log("Player Died!");
 
-            // wings don't have this, so itll error spam on collisions.
-            if (pointHandler != null)
-            {
-                pointHandler.savePoints();
-            }
-
-            SceneManager.LoadScene("FlyingEndlessLevel");
+            gameOverHandler.showGameOver();          
         }
     }
 }

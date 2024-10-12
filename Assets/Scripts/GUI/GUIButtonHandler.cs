@@ -7,14 +7,18 @@ public class GUIButtonHandler : MonoBehaviour
 {
     public void loadGame()
     {
-        SceneManager.LoadScene("Level01");
+        SceneManager.LoadScene("FlyingEndlessLevel");
     }
     public void exitGame()
     {
         Application.Quit();
     }
-    public void displayMenu()
+    public void loadLeadboardsMenu()
+    {    
+        SceneManager.LoadScene("Leaderboards");
+    }
+    public void loadHomeScreen()
     {
-
+        SceneManager.LoadScene("HomeScreen");
     }
 }
