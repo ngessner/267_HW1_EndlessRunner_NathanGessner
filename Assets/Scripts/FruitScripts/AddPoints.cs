@@ -32,7 +32,7 @@ public class AddPoints : MonoBehaviour
     {
         // dont like doing this but cant store as public when its a prefab
         GameObject scoreTextObject = GameObject.Find("PointNum");
-        GameObject playerObj = GameObject.Find("BatTemp");
+        GameObject playerObj = GameObject.Find("BatPlayer");
 
         pointsGUI = scoreTextObject.GetComponent<TextMeshProUGUI>();
         pointState = playerObj.GetComponent<PointHandler>();
