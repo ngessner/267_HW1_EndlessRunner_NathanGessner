@@ -2,4 +2,4 @@ try 4: 50
 try 5: 50
 try 7: 50
 Yeah!: 50
-newScore: 20
+: 50

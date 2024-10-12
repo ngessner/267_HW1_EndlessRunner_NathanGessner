@@ -23,18 +23,30 @@ public class EndGameHandler : MonoBehaviour
 
     public void loadHomeScreen()
     {
-        string playerName = nameInput.text;
-        pointHandler.savePoints(playerName);
+        // I have to do this because i couldn't figure out how to get my text file to read in webgl
+        // this'll bug out the game because it has no respective file pathing.
+#if UNITY_EDITOR
+        savePoints();
+#endif
 
-        SceneManager.LoadScene("HomeScreen");      
+        SceneManager.LoadScene("HomeScreen");
     }
-    // this turns off detect win, so the player can just go and add scores. This 
+
+    // This turns off detect win, so the player can just go and add scores. This 
     // gives the option for scores < 50
     public void loadInfiniteMode()
     {
-        string playerName = nameInput.text;
-        pointHandler.savePoints(playerName);
+
+#if UNITY_EDITOR
+        savePoints();
+#endif
 
         SceneManager.LoadScene("InfiniteMode");
+    }
+
+    private void savePoints()
+    {
+        string playerName = nameInput.text;
+        pointHandler.savePoints(playerName);
     }
 }

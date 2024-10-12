@@ -371,6 +371,10 @@ PrefabInstance:
       propertyPath: gameOverHandler
       value: 
       objectReference: {fileID: 841002197}
+    - target: {fileID: 2405854946148999778, guid: 9a9c25ab678b5694ba0c68d27b84b5b5, type: 3}
+      propertyPath: points
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 2704173846896263914, guid: 9a9c25ab678b5694ba0c68d27b84b5b5, type: 3}
       propertyPath: m_Name
       value: BatPlayer
